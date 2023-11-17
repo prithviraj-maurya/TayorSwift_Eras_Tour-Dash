@@ -36,11 +36,11 @@ popularity_albums_years_duration_fig = px.scatter(grouped, x='year', y='populari
                  title='Album Popularity Over the Years with Circle Size as Duration')
 
 # Create a bar chart for popularity
-bar_fig = go.Figure(data=[
-    go.Bar(x=grouped['year'], y=grouped['popularity'], width=0.1, marker=dict(opacity=0.5))
-])
-
-popularity_albums_years_duration_fig.add_trace(bar_fig.data[0])
+# bar_fig = go.Figure(data=[
+#     go.Bar(x=grouped['year'], y=grouped['popularity'], width=0.1, marker=dict(opacity=0.5))
+# ])
+#
+# popularity_albums_years_duration_fig.add_trace(bar_fig.data[0])
 popularity_albums_years_duration_fig.update_layout(
     xaxis_title='Year',
     yaxis_title='Mean Popularity',
@@ -137,10 +137,24 @@ app.layout = dmc.MantineProvider(
     withGlobalStyles=True,
     children=[
         dmc.Container([
-            dmc.Title('How to Become Taylor Swift ?', color="blue", size="h1", align="center"),
+            dmc.Title('The Eras Tour', color="blue", size="h1", align="center"),
+            dmc.Space(h=30),
+            dmc.Center(
+                children = [
+                    dmc.Select(
+                        label="Select Eras (will be applied to all relevant plots)",
+                        placeholder="Select one",
+                        id="framework-select",
+                        data=tours.Era.unique().tolist(),
+                        style={"width": 350, "marginBottom": 10},
+                    ),
+                ]
+            ),
+            dmc.Space(h=30),
+
             ## Row 1 - Album Popularity over Years and Album Image
-            dmc.Title("Step 1: Album releases and Album cover ", size="sm"),
-            dmc.Title("You need to release xx albums each year and look how dynamic album cover she makes", size="xs", color="gray"),
+            dmc.Title("Album releases and Album cover ", size="sm"),
+            dmc.Space(h=30),
             dmc.Grid([
                 dmc.Col([
                     dcc.Graph(figure=popularity_albums_years_duration_fig),
@@ -149,16 +163,19 @@ app.layout = dmc.MantineProvider(
                     dcc.Graph(figure=album_image_fig)
                 ], span=4),
             ]),
+            dmc.Space(h=30),
 
             ## Row 2 - Tracks per year & tracks per Era
-            dmc.Title("Step 2: Number of tours performed and tracks released ", size="sm"),
+            dmc.Title("Number of tours performed and tracks released ", size="sm"),
+            dmc.Space(h=10),
             dmc.Grid([
                 dmc.Col(dcc.Graph(figure=px.area(year_counts, title="Number of songs vs year released", x="year", y="name")), span=6),
                 dmc.Col(dcc.Graph(figure=tracks_per_era_fig), span=6)
             ]),
+            dmc.Space(h=30),
 
             ## Row 3 - Map & Name of Albums/Tracks
-            dmc.Title("Step 3: Go to all states of US and choose smart Album titles", size="sm"),
+            dmc.Space(h=10),
             dmc.Grid([
                 dmc.Col([
                     dcc.Graph(figure=graph_map_figure),
@@ -186,6 +203,10 @@ app.layout = dmc.MantineProvider(
         ], size=1200, px="xs")
     ]
 )
+
+# @callback(Output("selected-value", "children"), Input("framework-select", "value"))
+# def select_value(value):
+#     return value
 
 # Run the App
 if __name__ == '__main__':
