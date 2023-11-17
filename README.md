@@ -20,7 +20,7 @@ Using the above data, we can map each performed song to their associated metrics
 
 
 ### A Glimpse of the Dashboard
-![Screen Shot 2023-11-16 at 11.37.05 PM.png](..%2F..%2F..%2F..%2F..%2FDesktop%2FScreen%20Shot%202023-11-16%20at%2011.37.05%20PM.png)
+![dashboard_snapshot.png](dashboard_snapshot.png)
 
 
 ### References:
