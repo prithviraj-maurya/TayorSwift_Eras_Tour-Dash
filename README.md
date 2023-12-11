@@ -18,10 +18,31 @@ This data source will provide us with the necessary information regarding where 
 Using the above data, we can map each performed song to their associated metrics on Spotify such as the ones shown on the right.
 3. Kaggle: Taylor Concert Tour its impact on attendance and economy, Taylor Swift Era Tour Dataset
 
+Visualization Type: Maps, Bar Charts, Radar plot
+Tech Stack: D3.js, Plotly, Pandas
+Data Source: Taylor Swift Eras Tour Data, 900+ Fans Surveyed about ticket prices
+Observable notebook: https://observablehq.com/@prithviraj/taylor-swift-the-eras-tour 
+
+Introduction
+The Global Reach project delves into the dynamic landscape of Taylor Swift's Eras Tour, employing advanced data visualization techniques to bring to life the extensive network of shows worldwide. Leveraging technologies like D3.js, Plotly, and Pandas, the project extracts insights from the tour data, exploring not only the geographical expanse but also understanding its economic implications.
+
+Data Collection
+The data for the project was meticulously collected by scraping a blog post detailing the countries, cities, stadiums, dates, and the number of shows for Taylor Swift's Eras Tour in 2024. This information was compiled into a structured CSV file, serving as the foundation for developing insightful visualizations.
+
+
+Visualization 1: Categorized Map of Touring Countries
+The first visualization presents a comprehensive map of all countries included in the Eras Tour. Utilizing Plotly's geo capabilities, the coordinates of countries were projected onto the map. The equirectangular projection was employed for its ability to preserve relative sizes, ensuring an accurate depiction of the geographical distribution.
+
+![tour_countries.png](tour_countries.png)
+
+Visualization 2: Animated Tour Arcs on a Globe
+The second visualization introduces an animated map, showcasing arcs that connect countries based on the chronological order of tour dates. Drawing inspiration from the D3 documentation, a canvas-based globe was constructed, dynamically moving to represent the changing coordinates of countries over time. We started by an empty globe on canvas then showing the country boundaries, then by putting arcs from one country to another. Coloring the current country and then adding the animation effect by rotating the globe.
+
+![tour_countries_animated.png](tour_countries.png)
 
 ### A Glimpse of the Dashboard
-![dashboard_snapshot.png](dashboard_snapshot.png)
-
+![dashboard_snapshot.gif](dashboard_snapshot.gif)
+   
 
 ### References:
 
