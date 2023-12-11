@@ -41,7 +41,9 @@ The second visualization introduces an animated map, showcasing arcs that connec
 ![tour_countries_animated.gif](tour_countries_animated.gif)
 
 ### A Glimpse of the Dashboard
-![dashboard_snapshot.gif](dashboard_snapshot.gif)
+
+
+![dashboard_snapshot.png](dashboard_snapshot.png)
    
 
 ### References:
