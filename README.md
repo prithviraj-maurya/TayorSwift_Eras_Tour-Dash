@@ -38,7 +38,7 @@ The first visualization presents a comprehensive map of all countries included i
 Visualization 2: Animated Tour Arcs on a Globe
 The second visualization introduces an animated map, showcasing arcs that connect countries based on the chronological order of tour dates. Drawing inspiration from the D3 documentation, a canvas-based globe was constructed, dynamically moving to represent the changing coordinates of countries over time. We started by an empty globe on canvas then showing the country boundaries, then by putting arcs from one country to another. Coloring the current country and then adding the animation effect by rotating the globe.
 
-![tour_countries_animated.png](tour_countries.png)
+![tour_countries_animated.gif](tour_countries_animated.gif)
 
 ### A Glimpse of the Dashboard
 ![dashboard_snapshot.gif](dashboard_snapshot.gif)
